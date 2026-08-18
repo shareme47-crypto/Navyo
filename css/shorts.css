@@ -1,0 +1,214 @@
+/* MAYAVI Shorts (Vertical Video Reel) Layout & Gestures */
+
+.shorts-feed-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - var(--header-height) - 40px);
+  position: relative;
+}
+
+.shorts-reel-container {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  height: calc(100vh - var(--header-height) - 50px);
+  max-height: 820px;
+  aspect-ratio: 9 / 16;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+}
+
+.short-viewport-item {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #06090e;
+  overflow: hidden;
+}
+
+.short-media-surface {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Shorts Overlay Details */
+.short-info-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 70px;
+  padding: 24px 18px 20px;
+  background: linear-gradient(0deg, rgba(8, 11, 18, 0.95) 0%, rgba(8, 11, 18, 0.6) 50%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 10;
+}
+
+.short-creator-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.short-creator-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-full);
+  border: 1.5px solid var(--accent-saffron);
+}
+
+.short-creator-handle {
+  font-weight: 700;
+  color: #fff;
+  font-size: 14px;
+}
+
+.short-subscribe-pill {
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  background: #fff;
+  color: #000;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-left: 4px;
+}
+
+.short-video-caption {
+  color: #fff;
+  font-size: 13.5px;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+.short-sound-track-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.sound-track-title {
+  animation: marquee 8s linear infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Right Action Column on Shorts */
+.short-action-rail {
+  position: absolute;
+  right: 12px;
+  bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  z-index: 15;
+}
+
+.short-rail-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.short-rail-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  background: rgba(15, 20, 34, 0.75);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  transition: transform var(--transition-fast), background var(--transition-fast);
+}
+
+.short-rail-btn:hover .short-rail-icon-wrap {
+  transform: scale(1.1);
+  background: rgba(255, 138, 0, 0.4);
+  color: var(--accent-saffron);
+}
+
+.short-rail-btn.active .short-rail-icon-wrap {
+  color: var(--accent-saffron);
+  border-color: var(--accent-saffron);
+}
+
+/* Sound Disc Rotating */
+.sound-disc-vinyl {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  border: 3px solid #222;
+  background: #000;
+  overflow: hidden;
+  animation: spinDisc 4s linear infinite;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+  margin-top: 6px;
+}
+.sound-disc-vinyl img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@keyframes spinDisc {
+  100% { transform: rotate(360deg); }
+}
+
+/* Navigation Up / Down Floating Buttons */
+.shorts-nav-btn {
+  position: absolute;
+  right: -60px;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 20px;
+  transition: var(--transition-fast);
+}
+.shorts-nav-btn:hover {
+  background: var(--bg-surface-hover);
+  color: var(--accent-saffron);
+}
+.shorts-nav-up { top: 40%; }
+.shorts-nav-down { top: 52%; }
+
+@media (max-width: 600px) {
+  .shorts-nav-btn { display: none; }
+  .shorts-reel-container {
+    max-width: 100%;
+    height: calc(100vh - var(--header-height) - var(--mobile-bottom-nav-height));
+    border-radius: 0;
+  }
+}

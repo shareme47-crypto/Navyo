@@ -1,0 +1,152 @@
+/* MAYAVI Moderation & Admin Interface (Mayavi Raksha) */
+
+.admin-dashboard-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.admin-header-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 24px;
+  background: linear-gradient(135deg, rgba(255, 51, 75, 0.15), rgba(255, 138, 0, 0.1));
+  border: 1px solid rgba(255, 51, 75, 0.3);
+  border-radius: var(--radius-xl);
+}
+
+.admin-shield-icon {
+  font-size: 32px;
+}
+
+.admin-title-wrap h2 {
+  font-size: 20px;
+  font-weight: 800;
+  color: #fff;
+}
+.admin-title-wrap p {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+/* System Health Edge Nodes Telemetry */
+.system-telemetry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.telemetry-node-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.node-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.node-status-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--accent-green);
+}
+
+/* Moderation Queue Review Table */
+.mod-queue-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mod-report-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  gap: 20px;
+}
+
+.mod-video-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+}
+
+.mod-thumb {
+  width: 90px;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+}
+
+.mod-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mod-reason-tag {
+  display: inline-flex;
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 51, 75, 0.15);
+  color: var(--accent-red);
+  font-size: 11.5px;
+  font-weight: 700;
+  width: fit-content;
+}
+
+.mod-actions-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mod-btn-action {
+  padding: 7px 14px;
+  border-radius: var(--radius-md);
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.mod-btn-dismiss {
+  background: var(--bg-surface-elevated);
+  color: var(--text-secondary);
+}
+.mod-btn-dismiss:hover {
+  color: var(--text-primary);
+}
+
+.mod-btn-strike {
+  background: rgba(255, 138, 0, 0.15);
+  color: var(--accent-saffron);
+  border: 1px solid var(--accent-saffron-glow);
+}
+
+.mod-btn-takedown {
+  background: var(--accent-red);
+  color: #fff;
+}
